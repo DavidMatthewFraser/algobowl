@@ -7,33 +7,30 @@ using namespace std;
 void find_addends(int x, unordered_set<int> &usable, unordered_set<string> &addends) 
 {
     int addend = x/2;
-   
+
     if (usable.find(addend) == usable.end()) 
-        find_addends(x/2, usable, addends);
+        find_addends(addend, usable, addends);
 
     string output = to_string(addend) + " " + to_string(addend);
-    int set_size = addends.size();
 
-    addends.insert(output); 
-    if (set_size != addends.size())
+    if (addends.find(output) == addends.end())
         cout << output << endl;
 
-    bool plus_one = x % 2; 
-
-    if (plus_one) {
+    addends.insert(output); 
+    usable.insert(2 * addend);
+    if (x % 2) {
         output = to_string(2 * addend) + " 1";
-        set_size = addends.size();
-        addends.insert(to_string(addend) + " 1"); 
-        if (set_size != addends.size()) 
-            cout << output << endl;
-    }
 
-    usable.insert(addend + addend);
-    if(plus_one)  
-        usable.insert(addend + addend + 1);
+        if (addends.find(output) == addends.end()) 
+            cout << output << endl;
+
+        addends.insert(to_string(addend) + " 1"); 
+        usable.insert(2 * addend + 1);
+    }
 }
 
-int main() {
+int main() 
+{
     // int input[] = {2, 5};
     int input[] = {2, 5, 10, 15, 16, 24, 25};
     unordered_set<int> usable;
