@@ -13,7 +13,7 @@
 using namespace std;
 
 int main() {
-    string filename = "input.txt";
+    string filename = "input.txt";  //change filename as needed.
     string fPath;
     int item1, item2, length;
     vector<int> seen;
