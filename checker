@@ -1,0 +1,60 @@
+//
+//  main.cpp
+//  Project 1
+//
+//  Created by Samuel Billingham on 2/23/2021.
+//
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+
+using namespace std;
+
+int main() {
+    string filename = "input.txt";
+    string fPath;
+    int item1, item2, length;
+    vector<int> seen;
+    bool valid = true;
+    
+    seen.push_back(1);
+
+    ifstream inFile;
+    inFile.open(filename);
+    
+    if(!inFile){
+        cerr << "Unable to open " << filename << "." << endl;
+        exit(1);
+    }
+    
+    cout << "Loading Items Data......";
+    
+    while (inFile){
+        inFile >> length;
+        while (!inFile.eof()){
+            inFile >> item1 >> item2;
+            if(binary_search(seen.begin(), seen.end(), item1) && binary_search(seen.begin(), seen.end(), item2)){
+                seen.push_back(item1 + item2);
+                sort(seen.begin(), seen.end());
+            } else {
+                valid = false;
+            }
+        }
+    }
+    
+    inFile.close();
+    
+    if(valid){
+        cout << "Chain is valid." << endl;
+        cout << "Found items are:  ";
+        
+        for(int i = 0; i < seen.size(); i++){
+            cout << seen[i] << " ";
+        }
+        cout << endl;
+    } else {
+        cout << "Invalid Chain." << endl;
+    }
+}
