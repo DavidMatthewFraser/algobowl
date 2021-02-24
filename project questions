@@ -1,0 +1,15 @@
+Will each element of the input be unique?:
+
+Are repeated values allowed for valid output?:
+
+Could a valid input or output contain whitespaces and/or carriage returns?:
+
+What should we expect for time between each Algobowl stage?
+
+Interactions with website:
+  Will all files be uniquely identified?
+  
+  How will we download?(individual,zip,..)
+  
+  What will the validation reporting criterion be? (Go/No Go, specific error report,..)
+  
