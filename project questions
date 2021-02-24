@@ -1,15 +1,25 @@
-Will each element of the input be unique?:
+General Questions:
 
-Are repeated values allowed for valid output?:
+- Will each element of the input be unique?:
+yes, they will be unique
+- Are repeated values allowed for valid output?:
+yes, they are allowed
+- Could a valid input or output contain whitespaces and/or carriage returns?:
+Yes, output/input that has extra spaces/lines but otherwise is correct, is still valid. 
+- What should we expect for time between each Algobowl stage?
+see Stages_Info > algobowl_stages.pdf
 
-Could a valid input or output contain whitespaces and/or carriage returns?:
-
-What should we expect for time between each Algobowl stage?
 
 Interactions with website:
-  Will all files be uniquely identified?
-  
-  How will we download?(individual,zip,..)
-  
-  What will the validation reporting criterion be? (Go/No Go, specific error report,..)
+
+- How will we download?(individual,zip,..)
+It will be a ZIP containing all the files, see 
+Stages_Info > Verification, and
+Stages_Info > Output Upload
+
+- Will all files be uniquely identified?
+Yes, but Dr. Metah is unsure what exactly the convention will be.
+
+- What will the validation reporting criterion be? (Go/No Go, specific error report,..)
+It will be "Go/No Go", see Stages_Info > Verification
   
