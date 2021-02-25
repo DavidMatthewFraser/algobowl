@@ -1,11 +1,8 @@
 #include <iostream> 
 #include <vector>
 #include <unordered_set>
-#include <fstream>
-#include <chrono>
 
 using namespace std;
-using namespace chrono;
 
 unordered_set<int> seen = {1};
 unordered_set<int> calculated;
@@ -29,20 +26,12 @@ void getSequence(int n) {
 }
 
 int main() {
-    // File I/O
-    ifstream infile("input.txt");
-    int num;
     vector<int> input;
-    while(infile >> num) input.push_back(num);
-    auto start = high_resolution_clock::now();
-    /*********************************************/
+    int num;
+    while(cin >> num) input.push_back(num);
     for(int i : input) getSequence(i);
     cout << sequence.size() << endl;
     for(pair<int, int> p : sequence) cout << p.first << " " << p.second << endl;
-    /*********************************************/
-    auto stop = high_resolution_clock::now(); 
-    cout << duration_cast<microseconds>(stop - start).count() <<  " microseconds" << endl;
-    //infile.close();
     return 0;
 }
 
