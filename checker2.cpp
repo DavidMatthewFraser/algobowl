@@ -38,14 +38,14 @@ bool verify_seen(int x, int y) {
 
 void read_addition_chain() {
 	int x, y;
-    bool have_seen = true;
+    	bool seen_all = true;
 	while(cin >> x >> y) {
 		if(!verify_seen(x,y))
-			have_seen = false;
+			seen_all = false;
 		outputs.insert(x + y);
 		counted_operations++;
 	}
-	if(have_seen)
+	if(seen_all)
 		cout << "valid operations performed" << endl;
 }
 
