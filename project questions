@@ -2,12 +2,20 @@ General Questions:
 
 - Will each element of the input be unique?:
 yes, they will be unique
+
 - Are repeated values allowed for valid output?:
 yes, they are allowed
+
 - Could a valid input or output contain whitespaces and/or carriage returns?:
 Yes, output/input that has extra spaces/lines but otherwise is correct, is still valid. 
+
 - What should we expect for time between each Algobowl stage?
-see Stages_Info > algobowl_stages.pdf
+Input Upload: Mon, March 1, 2021 
+Output Upload: Wed, March 3, 2021 
+Verification:  Thursday, March 4, 2021
+Resolution: Friday March 5, 2021 
+Open Verification: Monday, March 8, 2021
+Evaluation: Monday, March 8, 2021
 
 
 Interactions with website:
