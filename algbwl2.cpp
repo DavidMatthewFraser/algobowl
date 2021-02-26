@@ -1,23 +1,25 @@
-#include <iostream>
-#include <fstream>
+#include <iostream> 
 #include <vector>
 #include <unordered_set>
+#include <set>
+//#include <bits/stdc++.h>
 
 using namespace std;
 
 unordered_set<int> seen = {1};
 unordered_set<int> calculated;
-vector<pair<int, int>> sequence;
+set<pair<int, int>> sequence;
 
 void getSequence(int n) {
+    if (n==1)return;
     if(seen.find(n/2) != seen.end()) { // if we can use n/2
         if(calculated.find(n/2) == calculated.end()) { // if we have not already calculated n/2 + n/2
-            sequence.push_back(pair<int, int>(n / 2, n / 2));
+            sequence.insert(pair<int, int>(n / 2, n / 2));
             calculated.insert(n/2);
             seen.insert(2*(n/2));
         }
         if(n % 2) {
-            sequence.push_back(pair<int, int>(n - 1, 1));
+            sequence.insert(pair<int, int>(n - 1, 1));
             seen.insert(n);
         }
     } else {
@@ -27,23 +29,21 @@ void getSequence(int n) {
 }
 
 int main() {
-
-    ifstream infile("input.txt");
-    string myText;
     vector<int> input;
-
-    while (getline (infile, myText , ' ')) {
-        input.push_back(stoi(myText));
+    int num;
+    int vals;
+    cin >> vals; //gets the first value out of the way. This is the length of the input. Not sure if we want to use it?
+    cout<<vals<<endl;
+    while(cin >> num) input.push_back(num);
+    for (int i = input.size() - 1; i >= 1; i--)  {
+        getSequence(input[i]-input[i-1]);
+        
+        sequence.insert(pair<int, int>(input[i-1],input[i]-input[i-1]));
     }
-    infile.close();
-
-    // vector<int> input = {2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811};
-    for(int i : input) getSequence(i);
-    ofstream outfile;
-    outfile.open ("group2.txt");
-    outfile << sequence.size() << endl;
-    for(pair<int, int> p : sequence) outfile <<p.first << " " << p.second << endl;
-    outfile.close();
+    cout << sequence.size() << endl;
+    for(auto it=sequence.begin(); it!=sequence.end(); ++it) {
+        cout << it->first << " " << it->second << endl;
+    }
     return 0;
 }
 
@@ -60,5 +60,6 @@ int main() {
     int maxInput = 1000000000;
     int maxInputs = 1000;
     for(int i=0; i<maxInputs; i++) input.push_back(maxInput-i);
-
+    
 */
+
