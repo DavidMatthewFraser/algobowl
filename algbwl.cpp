@@ -28,8 +28,6 @@ void getSequence(int n) {
 int main() {
     vector<int> input;
     int num;
-    int vals;
-    cin >> vals; //gets the first value out of the way. This is the length of the input. Not sure if we want to use it?
     while(cin >> num) input.push_back(num);
     for(int i : input) getSequence(i);
     cout << sequence.size() << endl;
