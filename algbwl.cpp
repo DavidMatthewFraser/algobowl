@@ -28,6 +28,7 @@ void getSequence(int n) {
 int main() {
     vector<int> input;
     int num;
+    cin >> num;
     while(cin >> num) input.push_back(num);
     for(int i : input) getSequence(i);
     cout << sequence.size() << endl;
