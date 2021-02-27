@@ -37,9 +37,9 @@ int main() {
     while(cin >> num) input.push_back(num);
     for (int i = input.size() - 1; i >= 1; i--)  {
         getSequence(input[i]-input[i-1]);
-        
         sequence.insert(pair<int, int>(input[i-1],input[i]-input[i-1]));
     }
+    getSequence(input[0]);
     cout << sequence.size() << endl;
     for(auto it=sequence.begin(); it!=sequence.end(); ++it) {
         cout << it->first << " " << it->second << endl;
