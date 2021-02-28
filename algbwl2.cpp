@@ -33,7 +33,7 @@ int main() {
     int num;
     int vals;
     cin >> vals; //gets the first value out of the way. This is the length of the input. Not sure if we want to use it?
-    cout<<vals<<endl;
+    // cout<<vals<<endl;
     while(cin >> num) input.push_back(num);
     for (int i = input.size() - 1; i >= 1; i--)  {
         getSequence(input[i]-input[i-1]);

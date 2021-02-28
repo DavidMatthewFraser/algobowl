@@ -9,7 +9,7 @@ vector<int> targets;
 unordered_set<int> outputs;
 int number_of_operations;
 int counted_operations = 0;
-string infile = "inputs/final_input.txt";
+string infile = "diffInput.txt";
 
 void read_input() {
 	ifstream f(infile);
@@ -38,7 +38,7 @@ bool verify_seen(int x, int y) {
 
 void read_addition_chain() {
 	int x, y;
-    	bool seen_all = true;
+	bool seen_all = true;
 	while(cin >> x >> y) {
 		if(!verify_seen(x,y))
 			seen_all = false;
@@ -59,11 +59,17 @@ void verify_number_of_operations() {
 
 void verify_all_targets_hit() {
 	bool all_hit = true;
-	for(int i : targets) 
+    bool skip_first = true;
+	for(int i : targets) { 
+		if(skip_first) {
+			skip_first = false;
+			continue;
+		}
 		if(outputs.find(i) == outputs.end()) {
 			cout << "expected target " << i << " was not computed by the addition chain" << endl;
 			all_hit = false;
 		}
+	}
 	if(all_hit) 
 		cout << "all targets hit" << endl;
 }
