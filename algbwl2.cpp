@@ -41,6 +41,7 @@ int main() {
      * compute its operands." - algobowl_s21.pdf
     **********/
     // *3/2-edit* we need to start from low to high so we actually compute i-1 before i
+    getSequence(input[0]);
     for (int i = 1; i <= input.size()-1; i++)  {
         int a = input[i] - input[i-1];
         getSequence(a);
@@ -48,8 +49,6 @@ int main() {
         // *3/2-edit* make sure to insert the value we just computed to seen
         seen.insert(input[i]);
     }
-    //                             getSequence(input[0]);
-    // *3/2-edit* we don't actually need this ^ ... when i = 1, i[0] gets computed
     cout << sequence.size() << endl;
     for(auto it=sequence.begin(); it!=sequence.end(); ++it) {
         cout << it->first << " " << it->second << endl;
