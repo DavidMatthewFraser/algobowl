@@ -1,5 +1,6 @@
-x=270
+echo "validate:" > ./validate/summary
 for filename in ./out/out*; do
-    x=$((x+1))
-    ./checker < $filename > "./validate/val_$x" 
+    echo "" >> ./validate/summary
+    echo "* $filename:" >> ./validate/summary
+    ./checker < $filename >> ./validate/summary 
 done
