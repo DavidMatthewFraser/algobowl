@@ -1,25 +1,26 @@
 #include <iostream> 
 #include <vector>
 #include <unordered_set>
-#include <set>
+// #include <set>
 //#include <bits/stdc++.h>
 
 using namespace std;
 
 unordered_set<int> seen = {1};
 unordered_set<int> calculated;
-set<pair<int, int>> sequence;
+// *3/2-edit* this can't be a set, we need the sequence ordered by when each addition is performed
+vector<pair<int, int>> sequence;
 
 void getSequence(int n) {
     if (n==1)return;
-    if(seen.find(n/2) != seen.end()) { // if we can use n/2
-        if(calculated.find(n/2) == calculated.end()) { // if we have not already calculated n/2 + n/2
-            sequence.insert(pair<int, int>(n / 2, n / 2));
+    if(seen.find(n/2) != seen.end()) {
+        if(calculated.find(n/2) == calculated.end()) {
+            sequence.push_back(pair<int, int>(n / 2, n / 2));
             calculated.insert(n/2);
             seen.insert(2*(n/2));
         }
         if(n % 2) {
-            sequence.insert(pair<int, int>(n - 1, 1));
+            sequence.push_back(pair<int, int>(n - 1, 1));
             seen.insert(n);
         }
     } else {
@@ -32,34 +33,26 @@ int main() {
     vector<int> input;
     int num;
     int vals;
-    cin >> vals; //gets the first value out of the way. This is the length of the input. Not sure if we want to use it?
-    // cout<<vals<<endl;
+    cin >> vals;
     while(cin >> num) input.push_back(num);
-    for (int i = input.size() - 1; i >= 1; i--)  {
-        getSequence(input[i]-input[i-1]);
-        sequence.insert(pair<int, int>(input[i-1],input[i]-input[i-1]));
+    /**********
+     * Note: "The addition operations may appear in any order in the output, 
+     * as long as any given operation appears after the two operations that 
+     * compute its operands." - algobowl_s21.pdf
+    **********/
+    // *3/2-edit* we need to start from low to high so we actually compute i-1 before i
+    for (int i = 1; i <= input.size()-1; i++)  {
+        int a = input[i] - input[i-1];
+        getSequence(a);
+        sequence.push_back(pair<int, int>(input[i-1],input[i]-input[i-1]));
+        // *3/2-edit* make sure to insert the value we just computed to seen
+        seen.insert(input[i]);
     }
-    getSequence(input[0]);
+    //                             getSequence(input[0]);
+    // *3/2-edit* we don't actually need this ^ ... when i = 1, i[0] gets computed
     cout << sequence.size() << endl;
     for(auto it=sequence.begin(); it!=sequence.end(); ++it) {
         cout << it->first << " " << it->second << endl;
     }
     return 0;
 }
-
-// Some Ideas for test input
-
-// int input[] = {2, 5};
-// int input[] = {2, 5, 10, 15, 16, 24, 25};
-// int input[] = {2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811};
-// int input[] = {2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765,10946,17711,28657,46368,75025,121393,196418,317811,514229,832040,1346269,2178309,3524578,5702887,9227465,14930352,24157817,39088169,63245986,102334155,165580141,267914296};
-
-// using the max number of inputs and the largest possible numbers:
-/*
-    vector<int> input;
-    int maxInput = 1000000000;
-    int maxInputs = 1000;
-    for(int i=0; i<maxInputs; i++) input.push_back(maxInput-i);
-    
-*/
-
