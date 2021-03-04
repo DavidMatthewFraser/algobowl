@@ -9,7 +9,7 @@ vector<int> targets;
 unordered_set<int> outputs;
 int number_of_operations;
 int counted_operations = 0;
-string infile = "diffInput.txt";
+string infile = "our_input";
 
 void read_input() {
 	ifstream f(infile);

@@ -1,106 +1,106 @@
 validate:
 
-* ./out/out_271:
+* ./out/output_from_271_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_272:
+* ./out/output_from_272_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_273:
+* ./out/output_from_273_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_274:
+* ./out/output_from_274_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_275:
+* ./out/output_from_275_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_276:
+* ./out/output_from_276_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_277:
+* ./out/output_from_277_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_278:
+* ./out/output_from_278_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_279:
+* ./out/output_from_279_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_280:
+* ./out/output_from_280_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_281:
+* ./out/output_from_281_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_282:
+* ./out/output_from_282_to_289.txt:
+valid operations performed
+number of operations verified
+expected target 999983104 was not computed by the addition chain
+
+* ./out/output_from_283_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_283:
+* ./out/output_from_284_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_284:
+* ./out/output_from_285_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_285:
+* ./out/output_from_286_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_286:
+* ./out/output_from_287_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_287:
+* ./out/output_from_288_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_288:
+* ./out/output_from_289_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_289:
+* ./out/output_from_290_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
 
-* ./out/out_290:
-valid operations performed
-number of operations verified
-all targets hit
-
-* ./out/out_291:
+* ./out/output_from_291_to_289.txt:
 valid operations performed
 number of operations verified
 all targets hit
